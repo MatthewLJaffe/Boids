@@ -15,9 +15,11 @@ public:
 	void update() override;
 
 
-private:
+protected:
 	SDL_Texture* _tex;
 	SDL_Rect _srcRect;
 	SDL_Rect _destRect;
+	SpriteComponent() {}
+
 	
 };
