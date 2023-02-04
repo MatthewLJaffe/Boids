@@ -20,9 +20,9 @@ void Game::init()
 	spawnPredators(4);
 	for (int i = 0; i < 4; i++)
 		spawnBoundary();
-	Entity& sliderBar = EntityManager::Instance().addEntity();
+	Entity& sliderBar = EntityManager::Instance().addEntity(3);
 	sliderBar.addComponent<SpriteComponent>(Vector2(200, 200), 1, Assets::Instance().sliderSprite);
-	Entity& slider = EntityManager::Instance().addEntity();
+	Entity& slider = EntityManager::Instance().addEntity(4);
 	slider.addComponent<SpriteComponent>(Vector2(200, 204), 1, Assets::Instance().knobSprite);
 	slider.addComponent<PreyBoidSteeringSlider>("Seperation", 0, 1, .3, 200-8, 380-8, "Seperation");
 }
@@ -76,7 +76,7 @@ void Game::spawnPreyFlock(int boids, SDL_Texture* tex, FoodSpawner* foodSpanwer)
 	_flocks.push_back(flock);
 	for (int i = 0; i < boids; i++)
 	{
-		Entity& boid = EntityManager::Instance().addEntity();
+		Entity& boid = EntityManager::Instance().addEntity(0);
 		boid.addComponent<TransformComponent>(Vector2(utils::randomFloat(-RenderWindow::Instance().WIDTH / 2, RenderWindow::Instance().WIDTH / 2),
 			utils::randomFloat(-RenderWindow::Instance().HEIGHT / 2, RenderWindow::Instance().HEIGHT / 2)), 0, Vector2(1, 1));
 		boid.addComponent<WorldSpriteComponent>(tex);
@@ -88,7 +88,7 @@ void Game::spawnPredators(int boids)
 {
 	for (int i = 0; i < boids; i++)
 	{
-		Entity& boid = EntityManager::Instance().addEntity();
+		Entity& boid = EntityManager::Instance().addEntity(1);
 		boid.addComponent<TransformComponent>(Vector2(utils::randomFloat(-RenderWindow::Instance().WIDTH / 2, RenderWindow::Instance().WIDTH / 2),
 			utils::randomFloat(-RenderWindow::Instance().HEIGHT / 2, RenderWindow::Instance().HEIGHT / 2)), 0, Vector2(1, 1));
 		boid.addComponent<WorldSpriteComponent>(Assets::Instance().predatorSprite);
@@ -98,7 +98,7 @@ void Game::spawnPredators(int boids)
 
 void Game::spawnBoundary()
 {
-	Entity& boundary = EntityManager::Instance().addEntity();
+	Entity& boundary = EntityManager::Instance().addEntity(2);
 	TransformComponent* trans = &boundary.addComponent<TransformComponent>(Vector2(utils::randomFloat(-RenderWindow::Instance().WIDTH / 2, RenderWindow::Instance().WIDTH / 2),
 		utils::randomFloat(-RenderWindow::Instance().HEIGHT / 2, RenderWindow::Instance().HEIGHT / 2)), 0, Vector2(1, 1));
 	boundary.addComponent<WorldSpriteComponent>(Assets::Instance().boundarySprite);
@@ -107,6 +107,6 @@ void Game::spawnBoundary()
 
 FoodSpawner* Game::createFoodSpawner()
 {
-	Entity& foodSpawner = EntityManager::Instance().addEntity();
+	Entity& foodSpawner = EntityManager::Instance().addEntity(0);
 	return &foodSpawner.addComponent<FoodSpawner>();
 }

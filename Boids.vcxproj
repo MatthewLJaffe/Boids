@@ -139,6 +139,7 @@
     <ClCompile Include="BoundaryComponent.cpp" />
     <ClCompile Include="Chase.cpp" />
     <ClCompile Include="Cohesion.cpp" />
+    <ClCompile Include="ECS.cpp" />
     <ClCompile Include="EntityManager.cpp" />
     <ClCompile Include="FoodComponent.cpp" />
     <ClCompile Include="FoodSpawner.cpp" />

@@ -1,15 +1,4 @@
-﻿  Alignment.cpp
-  BoidComponent.cpp
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\BoidComponent.cpp(66,60): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\BoidComponent.cpp(68,59): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\BoidComponent.cpp(71,61): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\BoidComponent.cpp(73,60): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  BoundaryComponent.cpp
-  Chase.cpp
-  Cohesion.cpp
-  EntityManager.cpp
-  FoodComponent.cpp
-  FoodSpawner.cpp
+﻿  FoodSpawner.cpp
 C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\FoodSpawner.cpp(32,135): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\FoodSpawner.cpp(32,99): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\FoodSpawner.cpp(33,92): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -27,7 +16,7 @@ C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Ga
 C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(102,132): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(103,92): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(103,55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\ECS.hpp(72,33): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\ECS.hpp(71,33): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
           with
           [
               _Ty=int
@@ -37,22 +26,16 @@ C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Ga
           [
               T=SpriteComponent
           ]
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\ECS.hpp(72,33): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\ECS.hpp(71,33): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
           with
           [
               _Ty=double
           ]
-  Main.cpp
-  PredatorBoid.cpp
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\PredatorBoid.cpp(8,52): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\PredatorBoid.cpp(9,58): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\PredatorBoid.cpp(10,55): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\PredatorBoid.cpp(36,38): warning C4305: 'argument': truncation from 'double' to 'float'
   PreyBoidComponent.cpp
 C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\PreyBoidComponent.cpp(10,54): warning C4305: 'argument': truncation from 'double' to 'float'
 C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\PreyBoidComponent.cpp(11,53): warning C4305: 'argument': truncation from 'double' to 'float'
 C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\PreyBoidComponent.cpp(12,51): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\ECS.hpp(72,33): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\ECS.hpp(71,33): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
           with
           [
               _Ty=int
@@ -62,21 +45,12 @@ C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Pr
           [
               T=PreyBoidComponent
           ]
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\ECS.hpp(72,33): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\ECS.hpp(71,33): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
           with
           [
               _Ty=double
           ]
-  Seperation.cpp
   PreyBoidSteeringSlider.cpp
-  SliderComponent.cpp
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\SliderComponent.cpp(79,20): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\SliderComponent.cpp(80,33): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\SliderComponent.cpp(84,22): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\SliderComponent.cpp(85,35): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-  SpriteComponent.cpp
-  SteerRandom.cpp
-  TransformComponent.cpp
   WorldSpriteComponent.cpp
 C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\WorldSpriteComponent.cpp(22,68): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\WorldSpriteComponent.cpp(23,68): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data

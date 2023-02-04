@@ -32,34 +32,33 @@ class Component
 {
 public:
 	Entity* entity;
-	virtual void init() {}
-	virtual void update() {}
-	virtual void render() {}
-	virtual ~Component() {}
+	virtual void init();
+	virtual void update();
+	virtual void render();
+	virtual ~Component();
 };
 
 class Entity
 {
 private:
+	bool destroyed = false;
 	bool active = true;
 	std::vector<std::unique_ptr<Component>> components;
-
+	std::vector<Entity*> children;
 	ComponentArray componentArray;
 	ComponentBitSet componentBitSet;
+
 public:
-	void update()
-	{
-		for (auto& c : components) c->update();
-	}
-
-	void render() 
-	{
-		for (auto& c : components) c->render();
-	}
-
-	bool isActive() { return active; }
-
-	void destroy() { active = false; }
+	Entity(int sortOrder);
+	void update();
+	void render();
+	void destroy();
+	bool isDestroyed();
+	void addChild(Entity* child);
+	void setActive(bool isActive);
+	bool isActive();
+	int sortOrder = 0;
+	Entity* parent = nullptr;
 
 	template <typename T> bool hasComponent() const
 	{
@@ -79,7 +78,7 @@ public:
 
 		c->init();
 		return *c;
-		
+
 	}
 
 	template<typename T> T& getComponent() const

@@ -83,7 +83,7 @@ void PreyBoidComponent::checkForFood()
 
 void PreyBoidComponent::spawnBoid()
 {
-	Entity& preyEntity = EntityManager::Instance().addEntity();
+	Entity& preyEntity = EntityManager::Instance().addEntity(0);
 	preyEntity.addComponent<TransformComponent>(transform->pos, 0, Vector2(1, 1));
 	preyEntity.addComponent<WorldSpriteComponent>(entity->getComponent<WorldSpriteComponent>().sprite);
 	preyEntity.addComponent<PreyBoidComponent>(2.5, .075, 25, 25, 120, flock, _foodSpawner);

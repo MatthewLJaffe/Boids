@@ -28,7 +28,7 @@ void FoodSpawner::update()
 
 void FoodSpawner::spawnFood()
 {
-	Entity& food = EntityManager::Instance().addEntity();
+	Entity& food = EntityManager::Instance().addEntity(0);
 	food.addComponent<TransformComponent>(Vector2(utils::randomFloat(-RenderWindow::Instance().WIDTH / 2, RenderWindow::Instance().WIDTH / 2),
 		utils::randomFloat(-RenderWindow::Instance().HEIGHT / 2, RenderWindow::Instance().HEIGHT / 2)), 0, Vector2(1, 1));
 	food.addComponent<WorldSpriteComponent>(Assets::Instance().foodSprite);
