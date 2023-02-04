@@ -41,7 +41,6 @@ public:
 class Entity
 {
 private:
-	bool destroy = false;
 	bool active = true;
 	std::vector<std::unique_ptr<Component>> components;
 
@@ -60,7 +59,7 @@ public:
 
 	bool isActive() { return active; }
 
-	void destroy() { destroy = true; }
+	void destroy() { active = false; }
 
 	template <typename T> bool hasComponent() const
 	{
