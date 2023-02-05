@@ -31,6 +31,7 @@ void InputManager::resetSingleFrameEvents()
 {
 	mousePressed = false;
 	mouseReleased = false;
+	buttonPressed = false;
 }
 
 void InputManager::handleInput(SDL_Event event)

@@ -4,8 +4,6 @@
 class Alignment : public SteeringBehaviour
 {
 public:
-	Alignment(float weight, float alignRadius);
+	Alignment(float weight);
 	Vector2 steer(std::vector<BoidComponent*>* boids, BoidComponent* self) override;
-private:
-	float _alignRadius;
 };

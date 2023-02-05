@@ -4,21 +4,25 @@
 #include "FoodComponent.hpp"
 #include "EntityManager.hpp"
 #include "Utils.hpp"
+#include "BoundaryComponent.hpp"
 
 class FoodComponent;
 
 class FoodSpawner : public Component
 {
 public:
-	FoodSpawner();
+	FoodSpawner(Vector2 minPos, Vector2 maxPos);
 	void update() override;
 	void init() override;
 	std::vector<FoodComponent*> foodComponents;
+	float spawnRate = 0;
+	float maxSpawnRate = 0;
+	float currSpawnTime = 0;
 
 private:
-	float _minSpawnTime = 0;
-	float _maxSpawnTime = 0;
-	float _currSpawnTime = 0;
 	int _startingFood = 0;
 	void spawnFood();
+	Vector2 _minPos;
+	Vector2 _maxPos;
+	const float c_foodRadius = 8;
 };

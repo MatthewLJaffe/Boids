@@ -3,14 +3,14 @@ std::vector<BoidComponent*> PreyBoidComponent::preyBoids;
 float PreyBoidComponent::foodWeight = .5;
 int PreyBoidComponent::foodToReproduce = 2;
 
-PreyBoidComponent::PreyBoidComponent(float maxSpeed, float maxAcc, float width, float height, float maxAngle, std::vector<BoidComponent*>* flock, FoodSpawner* foodSpawner)
-	: BoidComponent(maxSpeed, maxAcc, width, height, maxAngle, flock)
+PreyBoidComponent::PreyBoidComponent(float maxSpeed, float maxAcc, float width, float height, float maxAngle, float viewRadius, std::vector<BoidComponent*>* flock, FoodSpawner* foodSpawner)
+	: BoidComponent(maxSpeed, maxAcc, width, height, maxAngle, viewRadius, flock)
 {
-	//behavoiursMap["SteerRandom"] = new SteerRandom(.1);
-	behavoiursMap["Seperation"] = new Seperation(.4, 75);
-	behavoiursMap["Alignment"] = new Alignment(.3, 200);
-	behavoiursMap["Cohesion"] = new Cohesion(.3, 200);
-	behavoiursMap["AvoidPredators"] = new Seperation(.5, 500);
+	behavoiursMap["SteerRandom"] = new SteerRandom(.05);
+	behavoiursMap["Seperation"] = new Seperation(.35, 75);
+	behavoiursMap["Alignment"] = new Alignment(.3);
+	behavoiursMap["Cohesion"] = new Cohesion(.3);
+	behavoiursMap["AvoidPredators"] = new Seperation(.75);
 	this->_foodSpawner = foodSpawner;
 	this->_foodRadius = 250;
 }
@@ -86,7 +86,7 @@ void PreyBoidComponent::spawnBoid()
 	Entity& preyEntity = EntityManager::Instance().addEntity(0);
 	preyEntity.addComponent<TransformComponent>(transform->pos, 0, Vector2(1, 1));
 	preyEntity.addComponent<WorldSpriteComponent>(entity->getComponent<WorldSpriteComponent>().sprite);
-	preyEntity.addComponent<PreyBoidComponent>(2.5, .075, 25, 25, 120, flock, _foodSpawner);
+	preyEntity.addComponent<PreyBoidComponent>(maxSpeed, maxAcc, width, height, maxAngle,viewRadius, flock, _foodSpawner);
 }
 
 Vector2 PreyBoidComponent::steerTowardsFood()

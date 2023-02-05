@@ -1,5 +1,6 @@
 #include "BoidComponent.hpp"
 std::vector<BoidComponent*> BoidComponent::allBoids;
+float BoidComponent::maxTurnAngle = 120;
 
 Boundary::Boundary(float radius, TransformComponent* transform)
 {
@@ -9,7 +10,7 @@ Boundary::Boundary(float radius, TransformComponent* transform)
 
 BoidComponent::BoidComponent() {}
 
-BoidComponent::BoidComponent(float maxSpeed, float maxAcc, float width, float height, float _maxAngle, std::vector<BoidComponent*>* flock)
+BoidComponent::BoidComponent(float maxSpeed, float maxAcc, float width, float height, float maxAngle, float viewRadius, std::vector<BoidComponent*>* flock)
 {
 	this->maxSpeed = maxSpeed;
 	this->velocity = Vector2(utils::randomFloat(-1,1), utils::randomFloat(-1, 1));
@@ -19,9 +20,10 @@ BoidComponent::BoidComponent(float maxSpeed, float maxAcc, float width, float he
 	this->maxAcc = maxAcc;
 	this->width = width;
 	this->height = height;
-	this->_maxAngle = _maxAngle;
+	this->maxAngle = maxAngle;
 	this->flock = flock;
-	_obstacleAvoidRadius = 50;
+	this->viewRadius = viewRadius;
+	_obstacleAvoidRadius = 75;
 	_obstacleAvoidWeight = 2;
 }
 
@@ -50,28 +52,18 @@ void BoidComponent::update()
 {
 	Vector2 steerDir = steer();
 	float angle = velocity.angleBetween(steerDir);
-	if (angle > _maxAngle && angle < 360 - _maxAngle)
+	if (angle > maxTurnAngle && angle < 360 - maxTurnAngle)
 	{
 		if (angle > 180)
-			steerDir = velocity.rotate(360 - _maxAngle);
+			steerDir = velocity.rotate(360 - maxTurnAngle);
 		else
-			steerDir = velocity.rotate(_maxAngle);
+			steerDir = velocity.rotate(maxTurnAngle);
 	}
 	acceleration = steerDir.normalized() * maxAcc;
 	velocity += acceleration;
 	if (velocity.mag() > maxSpeed)
 		velocity = velocity.normalized() * maxSpeed;
 	transform->pos += velocity;
-	if (transform->pos.x - width / 2 > RenderWindow::Instance().WIDTH / 2.0)
-		transform->pos.x = -RenderWindow::Instance().WIDTH / 2.0 - width / 2.0;
-	else if (transform->pos.x + width / 2 < -RenderWindow::Instance().WIDTH / 2.0)
-		transform->pos.x = RenderWindow::Instance().WIDTH / 2.0 + width / 2;
-
-	if (transform->pos.y - height / 2 > RenderWindow::Instance().HEIGHT / 2.0)
-		transform->pos.y = -RenderWindow::Instance().HEIGHT / 2.0 - height / 2.0;
-	else if (transform->pos.y + height / 2 < -RenderWindow::Instance().HEIGHT / 2.0)
-		transform->pos.y = RenderWindow::Instance().HEIGHT / 2.0 + height / 2.0;
-
 	transform->angle = zeroDir.angleBetween(velocity);
 	if (transform->angle > 360 || transform->angle < 0)
 		transform->angle += 360;

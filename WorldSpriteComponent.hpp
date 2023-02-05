@@ -12,9 +12,10 @@ public:
 	void init() override;
 	void render() override;
 	void update() override;
+	static Vector2 worldOffset;
 private:
 	TransformComponent* transform;
 	SDL_Rect _srcRect;
 	SDL_Rect _destRect;
-	Vector2 screenCenter;
+	Vector2 _screenCenter;
 };

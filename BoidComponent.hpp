@@ -19,7 +19,7 @@ class BoidComponent : public Component
 {
 public:
 	BoidComponent();
-	BoidComponent(float maxSpeed, float maxAcc, float width, float height, float maxAngle, std::vector<BoidComponent*>* flock);
+	BoidComponent(float maxSpeed, float maxAcc, float width, float height, float maxAngle, float viewRadius, std::vector<BoidComponent*>* flock);
 	~BoidComponent();
 	void update() override;
 	void init() override;
@@ -28,17 +28,19 @@ public:
 	virtual Vector2 steer();
 	TransformComponent* transform;
 	static std::vector<BoidComponent*> allBoids;
+	static float maxTurnAngle;
 	std::vector<BoidComponent*>* flock;
 	std::map<std::string, SteeringBehaviour*> behavoiursMap;
+	float maxAngle;
 	float maxSpeed;
 	float maxAcc;
 	Vector2 velocity;
 	Vector2 acceleration;
 	float width;
 	float height;
+	float viewRadius;
 protected:
 	Vector2 zeroDir = Vector2(0, -1);
-	float _maxAngle;
 	float _obstacleAvoidWeight;
 	float _obstacleAvoidRadius;
 

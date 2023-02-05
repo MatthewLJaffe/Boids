@@ -1,13 +1,11 @@
 #include "Chase.hpp"
 
-Chase::Chase(float weight, float chaseRadius, float chaseTime, float maxAngle)
+Chase::Chase(float weight, float chaseTime)
 {
 	this->weight = weight;
-	this->_chaseRadius = chaseRadius;
 	this->_chaseTime = chaseTime;
 	this->_currChaseTime = 0;
 	this->_currTarget = nullptr;
-	this->_maxAngle = _maxAngle;
 }
 
 Vector2 Chase::steer(std::vector<BoidComponent*>* boids, BoidComponent* self)
@@ -25,10 +23,11 @@ Vector2 Chase::steer(std::vector<BoidComponent*>* boids, BoidComponent* self)
 		}
 	}
 	_currTarget = nullptr;
-	float closestDist = _chaseRadius;
+	float closestDist = self->viewRadius;
 	BoidComponent* closestBoid = nullptr;
 	for (auto& boid : *boids)
 	{
+		if (isBehind(self->velocity, boid->transform->pos - self->transform->pos, self->maxAngle)) continue;
 		float dist = self->transform->pos.distance(boid->transform->pos);
 		if (dist <= closestDist)
 		{
@@ -43,10 +42,10 @@ Vector2 Chase::steer(std::vector<BoidComponent*>* boids, BoidComponent* self)
 	return (closestBoid->transform->pos - self->transform->pos).normalized() * weight;
 }
 
-bool Chase::isBehind(Vector2 heading, Vector2 lookDir)
+bool Chase::isBehind(Vector2 heading, Vector2 lookDir, float maxAngle)
 {
 	float angle = heading.angleBetween(lookDir);
-	return angle >= _maxAngle && angle <= 360 - _maxAngle;
+	return angle >= maxAngle && angle <= 360 - maxAngle;
 }
 
 void Chase::delayChase(float time)

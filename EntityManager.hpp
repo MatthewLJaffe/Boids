@@ -10,6 +10,7 @@ public:
 	void update();
 	void render();
 	void refresh();
+	void clearEntities();
 	Entity& addEntity(int sortOrder);
 private:
 	EntityManager();

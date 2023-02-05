@@ -9,8 +9,8 @@ class RenderWindow
 {
     public:
         RenderWindow(const RenderWindow&) = delete;
-        int WIDTH;
-        int HEIGHT;
+        static int WIDTH;
+        static int HEIGHT;
         static RenderWindow& Instance();
         SDL_Texture* loadTexture(const char* filePath);
         void cleanUp();

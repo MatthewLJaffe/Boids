@@ -25,6 +25,10 @@ void Assets::loadImages()
     boundarySprite = rw.loadTexture("Assets/Images/boundary.png");
     sliderSprite = rw.loadTexture("Assets/Images/Slider.png");
     knobSprite = rw.loadTexture("Assets/Images/Knob.png");
+    arrowDown = rw.loadTexture("Assets/Images/ArrowDown.png");
+    arrowRight = rw.loadTexture("Assets/Images/ArrowRight.png");
+    buttonUp = rw.loadTexture("Assets/Images/Button1.png");
+    buttonDown = rw.loadTexture("Assets/Images/Button2.png");
 }
 
 void Assets::loadFonts()

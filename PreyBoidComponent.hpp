@@ -12,7 +12,7 @@ class PreyBoidComponent : public BoidComponent
 {
 public:
 	static std::vector<BoidComponent*> preyBoids;
-	PreyBoidComponent(float maxSpeed, float maxAcc, float width, float height, float maxAngle, std::vector<BoidComponent*>* flock, FoodSpawner* foodSpawner);
+	PreyBoidComponent(float maxSpeed, float maxAcc, float width, float height, float maxAngle, float viewRadius, std::vector<BoidComponent*>* flock, FoodSpawner* foodSpawner);
 	void init() override;
 	void update() override;
 	void deleteBoid() override;

@@ -25,7 +25,10 @@ public:
 	SDL_Texture* boundarySprite;
 	SDL_Texture* sliderSprite;
 	SDL_Texture* knobSprite;
-
+	SDL_Texture* arrowDown;
+	SDL_Texture* arrowRight;
+	SDL_Texture* buttonUp;
+	SDL_Texture* buttonDown;
 	TTF_Font* font;
 
 private:

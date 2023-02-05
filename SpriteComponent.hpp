@@ -5,6 +5,7 @@
 #include "RenderWindow.hpp"
 #include "Utils.hpp"
 
+
 class SpriteComponent : public Component
 {
 public:
@@ -13,7 +14,8 @@ public:
 	SpriteComponent(Vector2 pos, float scale, SDL_Texture* tex);
 	void render() override;
 	void update() override;
-
+	Vector2 getSize();
+	void setSprite(SDL_Texture* newTex);
 
 protected:
 	SDL_Texture* _tex;

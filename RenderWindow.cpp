@@ -1,4 +1,6 @@
 #include "RenderWindow.hpp"
+int RenderWindow::WIDTH = 0;
+int RenderWindow::HEIGHT = 0;
 
 RenderWindow& RenderWindow::Instance()
 {

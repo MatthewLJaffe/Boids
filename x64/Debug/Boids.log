@@ -1,58 +1,107 @@
-﻿  FoodSpawner.cpp
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\FoodSpawner.cpp(32,135): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\FoodSpawner.cpp(32,99): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\FoodSpawner.cpp(33,92): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\FoodSpawner.cpp(33,55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+﻿  Alignment.cpp
+  BoidComponent.cpp
+  BoundaryComponent.cpp
+  ButtonComponent.cpp
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\ButtonComponent.cpp(19,28): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\ButtonComponent.cpp(20,29): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Chase.cpp
+  Cohesion.cpp
+  ECS.cpp
+  EntityManager.cpp
+  FoodComponent.cpp
+  FoodSlider.cpp
+  FoodSpawner.cpp
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\FoodSpawner.cpp(6,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   Game.cpp
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(80,136): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(80,100): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(81,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(81,56): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(92,136): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(92,100): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(93,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(93,56): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(102,168): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(102,132): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(103,92): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(103,55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\ECS.hpp(71,33): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(177,71): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(177,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(182,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(182,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(183,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(183,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(184,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(184,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(185,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(185,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(186,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(186,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(187,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(187,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(188,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(188,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(189,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(189,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(190,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(190,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(194,75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(194,54): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(199,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(199,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(199,170): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(200,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(200,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(201,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(201,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(202,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(202,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(203,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(203,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(204,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(204,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(205,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(205,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(210,71): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(210,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(215,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(215,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(215,158): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(216,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(216,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\ECS.hpp(74,33): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
           with
           [
               _Ty=int
           ]
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(24,95): message : see reference to function template instantiation 'T &Entity::addComponent<SpriteComponent,Vector2,int,SDL_Texture*&>(Vector2 &&,int &&,SDL_Texture *&)' being compiled
-          with
-          [
-              T=SpriteComponent
-          ]
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\ECS.hpp(71,33): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
-          with
-          [
-              _Ty=double
-          ]
-  PreyBoidComponent.cpp
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\PreyBoidComponent.cpp(10,54): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\PreyBoidComponent.cpp(11,53): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\PreyBoidComponent.cpp(12,51): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\ECS.hpp(71,33): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
-          with
-          [
-              _Ty=int
-          ]
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\PreyBoidComponent.cpp(89,88): message : see reference to function template instantiation 'T &Entity::addComponent<PreyBoidComponent,double,double,int,int,int,std::vector<BoidComponent *,std::allocator<BoidComponent *>>*&,FoodSpawner*&>(double &&,double &&,int &&,int &&,int &&,std::vector<BoidComponent *,std::allocator<BoidComponent *>> *&,FoodSpawner *&)' being compiled
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(94,83): message : see reference to function template instantiation 'T &Entity::addComponent<PreyBoidComponent,int,double,int,int,int,int,std::vector<BoidComponent *,std::allocator<BoidComponent *>>*&,FoodSpawner*&>(int &&,double &&,int &&,int &&,int &&,int &&,std::vector<BoidComponent *,std::allocator<BoidComponent *>> *&,FoodSpawner *&)' being compiled
           with
           [
               T=PreyBoidComponent
           ]
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\ECS.hpp(71,33): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\ECS.hpp(74,33): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
           with
           [
               _Ty=double
           ]
-  PreyBoidSteeringSlider.cpp
+  Main.cpp
+  PredatorBoid.cpp
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\PredatorBoid.cpp(10,52): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\PredatorBoid.cpp(11,45): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\PredatorBoid.cpp(12,50): warning C4305: 'argument': truncation from 'double' to 'float'
+  PredatorSlider.cpp
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\PredatorSlider.cpp(19,64): warning C4552: '<': result of expression not used
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\PredatorSlider.cpp(26,64): warning C4552: '<': result of expression not used
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\PredatorSlider.cpp(33,64): warning C4552: '<': result of expression not used
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\PredatorSlider.cpp(40,64): warning C4552: '<': result of expression not used
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\PredatorSlider.cpp(47,64): warning C4552: '<': result of expression not used
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\PredatorSlider.cpp(54,33): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  PreyBoidComponent.cpp
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\PreyBoidComponent.cpp(9,53): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\PreyBoidComponent.cpp(10,55): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\PreyBoidComponent.cpp(11,48): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\PreyBoidComponent.cpp(12,46): warning C4305: 'argument': truncation from 'double' to 'float'
+  PreyBoidSlider.cpp
+  Seperation.cpp
+  SliderComponent.cpp
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\SliderComponent.cpp(103,32): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  SpriteComponent.cpp
+  Generating Code...
+  Compiling...
+  StatBlock.cpp
+  SteerRandom.cpp
+  TextComponent.cpp
+  TransformComponent.cpp
   WorldSpriteComponent.cpp
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\WorldSpriteComponent.cpp(22,68): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\WorldSpriteComponent.cpp(23,68): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\WorldSpriteComponent.cpp(23,85): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\WorldSpriteComponent.cpp(24,85): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   Generating Code...
   Boids.vcxproj -> C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\x64\Debug\Boids.exe

@@ -16,6 +16,7 @@ public:
 	void resetSingleFrameEvents();
 	const int maxWheel = 0;
 	const int minWheel = -2;
+	bool buttonPressed = false;
 
 private:
 	InputManager();

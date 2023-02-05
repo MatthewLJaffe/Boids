@@ -52,3 +52,8 @@ Entity& EntityManager::addEntity(int sortOrder)
 	return *e;
 }
 
+void EntityManager::clearEntities()
+{
+	entities.clear();
+}
+

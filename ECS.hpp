@@ -8,7 +8,6 @@
 
 class Component;
 class Entity;
-
 using ComponentID = std::size_t;
 
 inline ComponentID getComponentTypeID()
@@ -49,6 +48,8 @@ private:
 	ComponentBitSet componentBitSet;
 
 public:
+	static int componentsAdded;
+	virtual ~Entity();
 	Entity(int sortOrder);
 	void update();
 	void render();
@@ -68,6 +69,8 @@ public:
 	template <typename T, typename... TArgs>
 	T& addComponent(TArgs&&... mArgs)
 	{
+		componentsAdded++;
+		std::cout << "Components " << componentsAdded << std::endl;
 		T* c(new T(std::forward<TArgs>(mArgs)...));
 		c->entity = this;
 		std::unique_ptr<Component> uPtr{ c };

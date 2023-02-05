@@ -1,9 +1,8 @@
 #include "Cohesion.hpp"
 
-Cohesion::Cohesion(float weight, float cohesionRadius)
+Cohesion::Cohesion(float weight)
 {
 	this->weight = weight;
-	this->_coheisonRadius = cohesionRadius;
 }
 
 Vector2 Cohesion::steer(std::vector<BoidComponent*>* boids, BoidComponent* self)
@@ -12,7 +11,7 @@ Vector2 Cohesion::steer(std::vector<BoidComponent*>* boids, BoidComponent* self)
 	float nearby = 0;
 	for (auto boid : *boids)
 	{
-		if (boid == self || self->transform->pos.distance(boid->transform->pos) > _coheisonRadius) continue;
+		if (boid == self || self->transform->pos.distance(boid->transform->pos) > self->viewRadius) continue;
 		avgPos += boid->transform->pos;
 		nearby++;
 	}
