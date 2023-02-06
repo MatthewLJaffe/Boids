@@ -5,6 +5,7 @@
 class TextComponent : public SpriteComponent
 {
 public:
+	~TextComponent();
 	TextComponent(std::string message, Vector2 pos, float scale, int fontSize, TTF_Font* font, SDL_Color color, bool rightAlign);
 	void setText(std::string message);
 	void update() override;

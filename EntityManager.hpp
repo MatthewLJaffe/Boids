@@ -6,7 +6,7 @@ class EntityManager
 public:
 	EntityManager(const EntityManager&) = delete;
 	static EntityManager& Instance();
-	std::vector<std::unique_ptr<Entity>> entities;
+	std::vector<Entity*> entities;
 	void update();
 	void render();
 	void refresh();

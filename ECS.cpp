@@ -1,20 +1,14 @@
 #include "ECS.hpp"
-int Entity::componentsAdded = 0;
 void Component::init() {}
 void Component::update() {}
 void Component::render() {}
 
 Component::~Component() 
-{ 
-	static int destroyed = 0;
-	destroyed++;
-	std::cout << "Destroy Component " << destroyed << std::endl; 
-}
+{ }
 Entity::~Entity() 
 {
-	static int destroyed = 0;
-	destroyed++;
-	std::cout << "Destroy Entity " << destroyed << std::endl; 
+	for (size_t i = 0; i < components.size(); i++)
+		delete components[i];
 }
 
 

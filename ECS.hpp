@@ -42,13 +42,12 @@ class Entity
 private:
 	bool destroyed = false;
 	bool active = true;
-	std::vector<std::unique_ptr<Component>> components;
+	std::vector<Component*> components;
 	std::vector<Entity*> children;
 	ComponentArray componentArray;
 	ComponentBitSet componentBitSet;
 
 public:
-	static int componentsAdded;
 	virtual ~Entity();
 	Entity(int sortOrder);
 	void update();
@@ -69,12 +68,9 @@ public:
 	template <typename T, typename... TArgs>
 	T& addComponent(TArgs&&... mArgs)
 	{
-		componentsAdded++;
-		std::cout << "Components " << componentsAdded << std::endl;
 		T* c(new T(std::forward<TArgs>(mArgs)...));
 		c->entity = this;
-		std::unique_ptr<Component> uPtr{ c };
-		components.emplace_back(std::move(uPtr));
+		components.emplace_back(c);
 
 		componentArray[getComponentTypeID<T>()] = c;
 		componentBitSet[getComponentTypeID<T>()] = true;

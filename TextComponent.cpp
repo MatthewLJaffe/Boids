@@ -42,3 +42,8 @@ void TextComponent::setText(std::string message)
 	_srcRect = { 0, 0, textSurf->w, textSurf->h };
 	SDL_FreeSurface(textSurf);
 }
+
+TextComponent::~TextComponent()
+{
+	SDL_DestroyTexture(_tex);
+}

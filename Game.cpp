@@ -18,9 +18,9 @@ void Game::init()
 void Game::buildGame()
 {
 	FoodSpawner* foodSpawner = createFoodSpawner();
-	spawnPreyFlock(40, Assets::Instance().triangleSprite, foodSpawner);
-	spawnPreyFlock(40, Assets::Instance().triangleSpriteGreen, foodSpawner);
-	spawnPreyFlock(40, Assets::Instance().triangleSpriteYellow, foodSpawner);
+	spawnPreyFlock(60, Assets::Instance().triangleSprite, foodSpawner);
+	spawnPreyFlock(60, Assets::Instance().triangleSpriteGreen, foodSpawner);
+	spawnPreyFlock(60, Assets::Instance().triangleSpriteYellow, foodSpawner);
 	createWorldBoundary();
 	spawnPredators(12);
 	for (int i = 0; i < 20; i++)
@@ -34,7 +34,7 @@ void Game::update()
 	{
 		Time::Instance().UpdateTime();
 		handleEvents();
-		//EntityManager::Instance().refresh();
+		EntityManager::Instance().refresh();
 		EntityManager::Instance().update();
 		handleDragInput();
 		render();
@@ -293,6 +293,7 @@ void Game::cleanUp()
 {
 	for (size_t i = 0; i < _flocks.size(); i++)
 		delete _flocks[i];
+	EntityManager::Instance().clearEntities();
 	Assets::Instance().closeFonts();
 	RenderWindow::Instance().cleanUp();
 	SDL_Quit();
