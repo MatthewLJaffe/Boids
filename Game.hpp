@@ -40,6 +40,7 @@ private:
 	void spawnBoundary();
 	void spawnBoundary(float x, float y);
 	void handleDragInput();
+	bool _gameReset = false;
 	void createWorldBoundary();
 	void buildUI(FoodSpawner* foodSpawner);
 	void addSlider(Vector2 pos, std::string name, std::string param, float value, float minValue, float maxValue, std::vector<SliderComponent*>& sliders, std::string sliderType);

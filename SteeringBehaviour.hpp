@@ -8,6 +8,7 @@ class BoidComponent;
 class SteeringBehaviour
 {
 public:
+	virtual ~SteeringBehaviour();
 	float weight;
 	virtual Vector2 steer(std::vector<BoidComponent*>* boids, BoidComponent* self) = 0;
 };

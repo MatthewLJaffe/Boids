@@ -6,7 +6,8 @@ SpriteComponent::SpriteComponent(Vector2 pos, float scale, SDL_Texture* tex)
 	this->pos = pos;
 	this->scale = scale;
 	_tex = tex;
-	_srcRect.x, _srcRect.y = 0;
+	_srcRect.x = 0;
+	_srcRect.y = 0;
 	SDL_QueryTexture(_tex, NULL, NULL, &_srcRect.w, &_srcRect.h);
 	_destRect.x = utils::roundFloat(pos.x * scale);
 	_destRect.y = utils::roundFloat(pos.y * scale);

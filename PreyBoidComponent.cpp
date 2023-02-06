@@ -95,7 +95,7 @@ Vector2 PreyBoidComponent::steerTowardsFood()
 	Vector2 closestDir = Vector2(0, 0);
 	for (size_t i = 0; i < _foodSpawner->foodComponents.size(); i++)
 	{
-
+		if (isBehind(transform->pos - _foodSpawner->foodComponents[i]->transform.pos)) continue;
 		float dist = transform->pos.distance(_foodSpawner->foodComponents[i]->transform.pos);
 		if (dist < closestDistance)
 		{

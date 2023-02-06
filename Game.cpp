@@ -76,6 +76,12 @@ void Game::handleDragInput()
 
 void Game::render()
 {
+	//dont render before update has been called on all entities
+	if (_gameReset)
+	{
+		_gameReset = false;
+		return;
+	}
 	RenderWindow::Instance().clear();
 	EntityManager::Instance().render();
 	RenderWindow::Instance().display();
@@ -134,7 +140,7 @@ void Game::spawnPredators(int boids)
 void Game::spawnBoundary()
 {
 	Entity& boundary = EntityManager::Instance().addEntity(2);
-	TransformComponent* trans = &boundary.addComponent<TransformComponent>(Vector2(utils::randomFloat(minPos.x, maxPos.x),
+	boundary.addComponent<TransformComponent>(Vector2(utils::randomFloat(minPos.x, maxPos.x),
 		utils::randomFloat(minPos.y, maxPos.y)), 0, Vector2(1, 1));
 	boundary.addComponent<WorldSpriteComponent>(Assets::Instance().boundarySprite);
 	boundary.addComponent<BoundaryComponent>(25);
@@ -143,7 +149,7 @@ void Game::spawnBoundary()
 void Game::spawnBoundary(float x, float y)
 {
 	Entity& boundary = EntityManager::Instance().addEntity(2);
-	TransformComponent* trans = &boundary.addComponent<TransformComponent>(Vector2(x, y), 0, Vector2(1, 1));
+	boundary.addComponent<TransformComponent>(Vector2(x, y), 0, Vector2(1, 1));
 	boundary.addComponent<WorldSpriteComponent>(Assets::Instance().boundarySprite);
 	boundary.addComponent<BoundaryComponent>(25);
 }
@@ -203,7 +209,7 @@ void Game::buildUI(FoodSpawner* foodSpawner)
 	addSlider(Vector2(utils::roundFloat(RenderWindow::WIDTH - 300), predatorStatsPos.y + sliderSpace * 5), "Food to Reproduce", "Food to Reproduce", 4, 1, 10, predatorSliders, "Predator");
 	addSlider(Vector2(utils::roundFloat(RenderWindow::WIDTH - 300), predatorStatsPos.y + sliderSpace * 6), "Field of View", "Field of View", 180, 0, 360, predatorSliders, "Predator");
 	addSlider(Vector2(utils::roundFloat(RenderWindow::WIDTH - 300), predatorStatsPos.y + sliderSpace * 7), "Vision Radius", "Vision Radius", 200, 0, 500, predatorSliders, "Predator");
-	StatBlock* predatorBlock = &predatorStatsEntity.addComponent<StatBlock>(predatorSliders, false);
+	predatorStatsEntity.addComponent<StatBlock>(predatorSliders, false);
 
 
 	Entity& foodStatsEntity = EntityManager::Instance().addEntity(4);
@@ -218,7 +224,7 @@ void Game::buildUI(FoodSpawner* foodSpawner)
 	{
 		dynamic_cast<FoodSlider*>(slider)->setFoodSpawner(foodSpawner);
 	}
-	StatBlock* foodBlock = &foodStatsEntity.addComponent<StatBlock>(foodSliders, false);
+	foodStatsEntity.addComponent<StatBlock>(foodSliders, false);
 	preyBlock->toggleBlockVisibility();
 }
 
@@ -287,6 +293,7 @@ void Game::resetGame()
 	BoundaryComponent::boundaries.clear();
 	EntityManager::Instance().clearEntities();
 	buildGame();
+	_gameReset = true;
 }
 
 void Game::cleanUp()

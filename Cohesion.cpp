@@ -12,6 +12,7 @@ Vector2 Cohesion::steer(std::vector<BoidComponent*>* boids, BoidComponent* self)
 	for (auto boid : *boids)
 	{
 		if (boid == self || self->transform->pos.distance(boid->transform->pos) > self->viewRadius) continue;
+		if (self->isBehind(boid->transform->pos - self->transform->pos)) continue;
 		avgPos += boid->transform->pos;
 		nearby++;
 	}

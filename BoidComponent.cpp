@@ -52,14 +52,19 @@ void BoidComponent::update()
 {
 	Vector2 steerDir = steer();
 	float angle = velocity.angleBetween(steerDir);
+	
 	if (angle > maxTurnAngle && angle < 360 - maxTurnAngle)
 	{
 		if (angle > 180)
 			steerDir = velocity.rotate(360 - maxTurnAngle);
 		else
 			steerDir = velocity.rotate(maxTurnAngle);
-	}
+	}	
 	acceleration = steerDir.normalized() * maxAcc;
+	if (acceleration.mag() > maxAcc + .0001)
+	{
+		std::cout << "?" << std::endl;
+	}
 	velocity += acceleration;
 	if (velocity.mag() > maxSpeed)
 		velocity = velocity.normalized() * maxSpeed;
@@ -102,6 +107,13 @@ void BoidComponent::deleteBoid()
 
 	entity->destroy();
 }
+
+bool BoidComponent::isBehind(Vector2 lookDir)
+{
+	float angle = velocity.angleBetween(lookDir);
+	return angle >= maxAngle && angle <= 360 - maxAngle;
+}
+
 
 BoidComponent::~BoidComponent()
 {

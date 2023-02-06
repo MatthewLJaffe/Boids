@@ -27,7 +27,7 @@ Vector2 Chase::steer(std::vector<BoidComponent*>* boids, BoidComponent* self)
 	BoidComponent* closestBoid = nullptr;
 	for (auto& boid : *boids)
 	{
-		if (isBehind(self->velocity, boid->transform->pos - self->transform->pos, self->maxAngle)) continue;
+		if (self->isBehind(boid->transform->pos - self->transform->pos)) continue;
 		float dist = self->transform->pos.distance(boid->transform->pos);
 		if (dist <= closestDist)
 		{
@@ -40,12 +40,6 @@ Vector2 Chase::steer(std::vector<BoidComponent*>* boids, BoidComponent* self)
 	_currTarget = closestBoid->transform;
 	_currChaseTime = _chaseTime;
 	return (closestBoid->transform->pos - self->transform->pos).normalized() * weight;
-}
-
-bool Chase::isBehind(Vector2 heading, Vector2 lookDir, float maxAngle)
-{
-	float angle = heading.angleBetween(lookDir);
-	return angle >= maxAngle && angle <= 360 - maxAngle;
 }
 
 void Chase::delayChase(float time)

@@ -13,5 +13,4 @@ private:
 	float _chaseTime;
 	float _currChaseTime;
 	TransformComponent* _currTarget;
-	bool isBehind(Vector2 heading, Vector2 lookDir, float maxAngle);
 };

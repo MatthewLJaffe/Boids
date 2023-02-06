@@ -26,6 +26,7 @@ public:
 	Vector2 avoidObstacles();
 	virtual void deleteBoid();
 	virtual Vector2 steer();
+	bool isBehind(Vector2 lookDir);
 	TransformComponent* transform;
 	static std::vector<BoidComponent*> allBoids;
 	static float maxTurnAngle;
@@ -43,5 +44,6 @@ protected:
 	Vector2 zeroDir = Vector2(0, -1);
 	float _obstacleAvoidWeight;
 	float _obstacleAvoidRadius;
-
+	float minVelocity = .2;
+	Vector2 _heading;
 };

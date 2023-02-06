@@ -16,35 +16,35 @@ void PredatorSlider::onValueUpdate()
 {
 	if (_sliderParameter == "Speed")
 	{
-		for (size_t i = 0; i < PredatorBoid::predatorBoids.size(); i < i++)
+		for (size_t i = 0; i < PredatorBoid::predatorBoids.size(); i++)
 		{
 			PredatorBoid::predatorBoids[i]->maxSpeed = _value;
 		}
 	}
 	else if (_sliderParameter == "Acceleration")
 	{
-		for (size_t i = 0; i < PredatorBoid::predatorBoids.size(); i < i++)
+		for (size_t i = 0; i < PredatorBoid::predatorBoids.size(); i++)
 		{
 			PredatorBoid::predatorBoids[i]->maxAcc = _value / 100;
 		}
 	}
 	else if (_sliderParameter == "Field of View")
 	{
-		for (size_t i = 0; i < PredatorBoid::predatorBoids.size(); i < i++)
+		for (size_t i = 0; i < PredatorBoid::predatorBoids.size(); i++)
 		{
 			PredatorBoid::predatorBoids[i]->maxAngle = _value / 2;
 		}
 	}
 	else if (_sliderParameter == "Vision Radius")
 	{
-		for (size_t i = 0; i < PredatorBoid::predatorBoids.size(); i < i++)
+		for (size_t i = 0; i < PredatorBoid::predatorBoids.size(); i++)
 		{
 			PredatorBoid::predatorBoids[i]->viewRadius = _value;
 		}
 	}
 	else if (_sliderParameter == "Aggression")
 	{
-		for (size_t i = 0; i < PredatorBoid::predatorBoids.size(); i < i++)
+		for (size_t i = 0; i < PredatorBoid::predatorBoids.size(); i++)
 		{
 			PredatorBoid::predatorBoids[i]->behavoiursMap["Chase"]->weight = _value;
 		}

@@ -157,6 +157,7 @@
     <ClCompile Include="SliderComponent.cpp" />
     <ClCompile Include="SpriteComponent.cpp" />
     <ClCompile Include="StatBlock.cpp" />
+    <ClCompile Include="SteeringBehaviour.cpp" />
     <ClCompile Include="SteerRandom.cpp" />
     <ClCompile Include="TextComponent.cpp" />
     <ClCompile Include="Time.cpp" />
