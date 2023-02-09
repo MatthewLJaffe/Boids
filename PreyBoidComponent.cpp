@@ -6,11 +6,11 @@ int PreyBoidComponent::foodToReproduce = 2;
 PreyBoidComponent::PreyBoidComponent(float maxSpeed, float maxAcc, float width, float height, float maxAngle, float viewRadius, std::vector<BoidComponent*>* flock, FoodSpawner* foodSpawner)
 	: BoidComponent(maxSpeed, maxAcc, width, height, maxAngle, viewRadius, flock)
 {
-	behavoiursMap["SteerRandom"] = new SteerRandom(.05);
-	behavoiursMap["Seperation"] = new Seperation(.35, 75);
-	behavoiursMap["Alignment"] = new Alignment(.3);
-	behavoiursMap["Cohesion"] = new Cohesion(.3);
-	behavoiursMap["AvoidPredators"] = new Seperation(.75);
+	behavoiursMap["SteerRandom"] = new SteerRandom(.05f);
+	behavoiursMap["Seperation"] = new Seperation(.35f, 75.0f);
+	behavoiursMap["Alignment"] = new Alignment(.3f);
+	behavoiursMap["Cohesion"] = new Cohesion(.3f);
+	behavoiursMap["AvoidPredators"] = new Seperation(.75f);
 	this->_foodSpawner = foodSpawner;
 	this->_foodRadius = 250;
 }

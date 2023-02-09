@@ -7,9 +7,9 @@ float PredatorBoid::liveTimeWithoutFood = 25;
 PredatorBoid::PredatorBoid(float maxSpeed, float maxAcc, float width, float height, float maxAngle, float viewRadius, std::vector<BoidComponent*>* flock)
 	: BoidComponent(maxSpeed, maxAcc, width, height, maxAngle, viewRadius, flock)
 {
-	behavoiursMap["SteerRandom"] = new SteerRandom(.1);
-	behavoiursMap["Chase"] = new Chase(.7, 2.5);
-	behavoiursMap["Seperation"] = new Seperation(.2);
+	behavoiursMap["SteerRandom"] = new SteerRandom(.1f);
+	behavoiursMap["Chase"] = new Chase(.7f, 2.5f);
+	behavoiursMap["Seperation"] = new Seperation(.2f);
 	_currEatTime = 0;
 	_eatTime = 2;
 	_currTime = 0;

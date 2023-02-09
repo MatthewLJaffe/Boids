@@ -1,9 +1,7 @@
 #include "Alignment.hpp"
 
-Alignment::Alignment(float weight)
-{
-	this->weight = weight;
-}
+Alignment::Alignment(float weight) : SteeringBehaviour(weight)
+{}
 
 Vector2 Alignment::steer(std::vector<BoidComponent*>* boids, BoidComponent* self)
 {

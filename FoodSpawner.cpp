@@ -3,7 +3,7 @@
 FoodSpawner::FoodSpawner(Vector2 minPos, Vector2 maxPos)
 {
 	this->maxSpawnRate = 4;
-	this->spawnRate = .3 * maxSpawnRate;
+	this->spawnRate = .3f * maxSpawnRate;
 	this->currSpawnTime =  1 / spawnRate;
 	this->_startingFood = 12;
 	this->_minPos = minPos;

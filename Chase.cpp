@@ -1,8 +1,7 @@
 #include "Chase.hpp"
 
-Chase::Chase(float weight, float chaseTime)
+Chase::Chase(float weight, float chaseTime) : SteeringBehaviour(weight)
 {
-	this->weight = weight;
 	this->_chaseTime = chaseTime;
 	this->_currChaseTime = 0;
 	this->_currTarget = nullptr;

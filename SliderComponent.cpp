@@ -100,7 +100,7 @@ void SliderComponent::update()
 		float newValue = utils::lerp(_minValue, _maxValue, (newSpriteX - _minX) / (_maxX - _minX));
 		if (abs(newValue - _value) >= 1)
 		{
-			newValue = utils::roundFloat(newValue);
+			newValue = std::roundf(newValue);
 			_knobSprite->pos.x = utils::lerp(_minX, _maxX, (newValue - _minValue) / (_maxValue - _minValue));
 			_value = newValue;
 			updateValueText(std::to_string(_value));

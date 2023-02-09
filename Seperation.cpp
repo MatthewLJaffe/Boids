@@ -1,16 +1,15 @@
 #include "Seperation.hpp"
 
-Seperation::Seperation(float weight, float avoidRadius)
+Seperation::Seperation(float weight, float avoidRadius) : SteeringBehaviour(weight)
 {
 	_useRadius = true;
 	this->avoidRadius = avoidRadius;
-	this->weight = weight;
 }
 
-Seperation::Seperation(float weight)
+Seperation::Seperation(float weight) : SteeringBehaviour(weight)
 {
+	avoidRadius = 100;
 	_useRadius = false;
-	this->weight = weight;
 }
 
 

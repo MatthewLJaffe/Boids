@@ -1,8 +1,7 @@
 #include "Cohesion.hpp"
 
-Cohesion::Cohesion(float weight)
+Cohesion::Cohesion(float weight) : SteeringBehaviour(weight)
 {
-	this->weight = weight;
 }
 
 Vector2 Cohesion::steer(std::vector<BoidComponent*>* boids, BoidComponent* self)

@@ -71,8 +71,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\src\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\src\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)src\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)src\lib\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(SolutionDir)src\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)src\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -130,6 +134,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

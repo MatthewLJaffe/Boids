@@ -20,8 +20,8 @@ void WorldSpriteComponent::update()
 {
 	_destRect.w = utils::roundFloat(_srcRect.w * transform->scale.x);
 	_destRect.h = utils::roundFloat(_srcRect.h * transform->scale.y);
-	_destRect.x = utils::roundFloat(transform->pos.x + _screenCenter.x + worldOffset.x - _destRect.w / 2.0);
-	_destRect.y = utils::roundFloat(transform->pos.y + _screenCenter.y + worldOffset.y - _destRect.h / 2.0);
+	_destRect.x = utils::roundFloat(transform->pos.x + _screenCenter.x + worldOffset.x - _destRect.w / 2.0f);
+	_destRect.y = utils::roundFloat(transform->pos.y + _screenCenter.y + worldOffset.y - _destRect.h / 2.0f);
 }
 
 void WorldSpriteComponent::render()

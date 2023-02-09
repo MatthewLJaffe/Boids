@@ -44,6 +44,6 @@ protected:
 	Vector2 zeroDir = Vector2(0, -1);
 	float _obstacleAvoidWeight;
 	float _obstacleAvoidRadius;
-	float minVelocity = .2;
+	float minVelocity = .2f;
 	Vector2 _heading;
 };

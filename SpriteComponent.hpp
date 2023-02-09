@@ -21,7 +21,13 @@ protected:
 	SDL_Texture* _tex;
 	SDL_Rect _srcRect;
 	SDL_Rect _destRect;
-	SpriteComponent() {}
+	SpriteComponent() 
+	{
+		scale = 1;
+		_srcRect = {0,0,0,0};
+		_destRect = {0,0,0,0};
+		_tex = nullptr;
+	}
 
 	
 };

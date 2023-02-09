@@ -97,7 +97,7 @@ void Game::spawnPreyFlock(int boids, SDL_Texture* tex, FoodSpawner* foodSpanwer)
 		boid.addComponent<TransformComponent>(Vector2(utils::randomFloat(minPos.x, maxPos.x),
 			utils::randomFloat(minPos.y, maxPos.y)), 0, Vector2(1, 1));
 		boid.addComponent<WorldSpriteComponent>(tex);
-		boid.addComponent<PreyBoidComponent>(3, .05, 19, 25, 90, 250, flock, foodSpanwer);
+		boid.addComponent<PreyBoidComponent>(3.0f, .05f, 19.0f, 25.0f, 90.0f, 250.0f, flock, foodSpanwer);
 	}
 }
 
@@ -133,7 +133,7 @@ void Game::spawnPredators(int boids)
 		boid.addComponent<TransformComponent>(Vector2(utils::randomFloat(minPos.x, maxPos.x),
 			utils::randomFloat(minPos.y, maxPos.y)), 0, Vector2(1, 1));
 		boid.addComponent<WorldSpriteComponent>(Assets::Instance().predatorSprite);
-		boid.addComponent<PredatorBoid>(2.5, .03, 40, 40, 90, 200, &_predators);
+		boid.addComponent<PredatorBoid>(2.5f, .03f, 40.0f, 40.0f, 90.0f, 200.0f, &_predators);
 	}
 }
 
@@ -143,7 +143,7 @@ void Game::spawnBoundary()
 	boundary.addComponent<TransformComponent>(Vector2(utils::randomFloat(minPos.x, maxPos.x),
 		utils::randomFloat(minPos.y, maxPos.y)), 0, Vector2(1, 1));
 	boundary.addComponent<WorldSpriteComponent>(Assets::Instance().boundarySprite);
-	boundary.addComponent<BoundaryComponent>(25);
+	boundary.addComponent<BoundaryComponent>(25.0f);
 }
 
 void Game::spawnBoundary(float x, float y)
@@ -151,7 +151,7 @@ void Game::spawnBoundary(float x, float y)
 	Entity& boundary = EntityManager::Instance().addEntity(2);
 	boundary.addComponent<TransformComponent>(Vector2(x, y), 0, Vector2(1, 1));
 	boundary.addComponent<WorldSpriteComponent>(Assets::Instance().boundarySprite);
-	boundary.addComponent<BoundaryComponent>(25);
+	boundary.addComponent<BoundaryComponent>(25.0f);
 }
 
 FoodSpawner* Game::createFoodSpawner()
@@ -165,61 +165,61 @@ void Game::buildUI(FoodSpawner* foodSpawner)
 	SDL_Color black = { 0, 0, 0 };
 	Vector2 quitButtonPos = Vector2(50, 50);
 	Entity& quitButton = EntityManager::Instance().addEntity(4);
-	quitButton.addComponent<SpriteComponent>(quitButtonPos, 1, Assets::Instance().buttonUp);
-	quitButton.addComponent<TextComponent>("Quit", quitButtonPos + Vector2(32, 12), 1, 24, Assets::Instance().font, black, false);
+	quitButton.addComponent<SpriteComponent>(quitButtonPos, 1.0f, Assets::Instance().buttonUp);
+	quitButton.addComponent<TextComponent>("Quit", quitButtonPos + Vector2(32, 12), 1.0f, 24, Assets::Instance().font, black, false);
 	auto quitGame = [this]() {_gameRunning = false; };
 	quitButton.addComponent<ButtonComponent>(Assets::Instance().buttonUp, Assets::Instance().buttonDown, quitGame);
 
 	Vector2 resetButtonPos = Vector2(200, 50);
 	Entity& resetButton = EntityManager::Instance().addEntity(4);
-	resetButton.addComponent<SpriteComponent>(resetButtonPos, 1, Assets::Instance().buttonUp);
-	resetButton.addComponent<TextComponent>("Reset", resetButtonPos + Vector2(28, 12), 1, 24, Assets::Instance().font, black, false);
+	resetButton.addComponent<SpriteComponent>(resetButtonPos, 1.0f, Assets::Instance().buttonUp);
+	resetButton.addComponent<TextComponent>("Reset", resetButtonPos + Vector2(28, 12), 1.0f, 24, Assets::Instance().font, black, false);
 	auto reset = [this]() {resetGame(); };
 	resetButton.addComponent<ButtonComponent>(Assets::Instance().buttonUp, Assets::Instance().buttonDown, reset);
 
 	Entity& preyStatsEntity = EntityManager::Instance().addEntity(4);
 	SDL_Color white = { 255, 255, 255 };
 	float sliderSpace = 30;
-	Vector2 preyStatsPos = Vector2(utils::roundFloat(RenderWindow::WIDTH - 450), 40);
-	preyStatsEntity.addComponent<TextComponent>("Prey", preyStatsPos, 1, 24, Assets::Instance().font, white, false);
-	preyStatsEntity.addComponent<SpriteComponent>(preyStatsPos + Vector2(-30, 12), 1, Assets::Instance().arrowDown);
+	Vector2 preyStatsPos = Vector2(RenderWindow::WIDTH - 450.0f, 40.0f);
+	preyStatsEntity.addComponent<TextComponent>("Prey", preyStatsPos, 1.0f, 24, Assets::Instance().font, white, false);
+	preyStatsEntity.addComponent<SpriteComponent>(preyStatsPos + Vector2(-30, 12), 1.0f, Assets::Instance().arrowDown);
 	std::vector<SliderComponent*> preySliders;
 	preyStatsPos.y += 10;
-	addSlider(Vector2(utils::roundFloat(RenderWindow::WIDTH - 300), preyStatsPos.y + sliderSpace * 1), "Seperation", "Seperation", .4f, 0, 1, preySliders, "Prey");
-	addSlider(Vector2(utils::roundFloat(RenderWindow::WIDTH - 300), preyStatsPos.y + sliderSpace * 2), "Alignment", "Alignment", .3f, 0, 1, preySliders, "Prey");
-	addSlider(Vector2(utils::roundFloat(RenderWindow::WIDTH - 300), preyStatsPos.y + sliderSpace * 3), "Cohesion", "Cohesion", .3f, 0, 1, preySliders, "Prey");
-	addSlider(Vector2(utils::roundFloat(RenderWindow::WIDTH - 300), preyStatsPos.y + sliderSpace * 4), "Speed", "Speed", 2.5, 0, 5, preySliders, "Prey");
-	addSlider(Vector2(utils::roundFloat(RenderWindow::WIDTH - 300), preyStatsPos.y + sliderSpace * 5), "Acceleration", "Acceleration", 6, 0, 10, preySliders, "Prey");
-	addSlider(Vector2(utils::roundFloat(RenderWindow::WIDTH - 300), preyStatsPos.y + sliderSpace * 6), "Food Attraction", "Food Attraction", .5, 0, 1, preySliders, "Prey");
-	addSlider(Vector2(utils::roundFloat(RenderWindow::WIDTH - 300), preyStatsPos.y + sliderSpace * 7), "Predator Avoidance", "AvoidPredators", .75, 0, 1, preySliders, "Prey");
-	addSlider(Vector2(utils::roundFloat(RenderWindow::WIDTH - 300), preyStatsPos.y + sliderSpace * 8), "Field of View", "Field of View", 180, 0, 360, preySliders, "Prey");
-	addSlider(Vector2(utils::roundFloat(RenderWindow::WIDTH - 300), preyStatsPos.y + sliderSpace * 9), "Vision Radius", "Vision Radius", 250, 0, 500, preySliders, "Prey");
+	addSlider(Vector2(RenderWindow::WIDTH - 300.0f, preyStatsPos.y + sliderSpace * 1.0f), "Seperation", "Seperation", .4f, 0, 1, preySliders, "Prey");
+	addSlider(Vector2(RenderWindow::WIDTH - 300.0f, preyStatsPos.y + sliderSpace * 2.0f), "Alignment", "Alignment", .3f, 0, 1, preySliders, "Prey");
+	addSlider(Vector2(RenderWindow::WIDTH - 300.0f, preyStatsPos.y + sliderSpace * 3.0f), "Cohesion", "Cohesion", .3f, 0, 1, preySliders, "Prey");
+	addSlider(Vector2(RenderWindow::WIDTH - 300.0f, preyStatsPos.y + sliderSpace * 4.0f), "Speed", "Speed", 2.5, 0, 5, preySliders, "Prey");
+	addSlider(Vector2(RenderWindow::WIDTH - 300.0f, preyStatsPos.y + sliderSpace * 5.0f), "Acceleration", "Acceleration", 6, 0, 10, preySliders, "Prey");
+	addSlider(Vector2(RenderWindow::WIDTH - 300.0f, preyStatsPos.y + sliderSpace * 6.0f), "Food Attraction", "Food Attraction", .5, 0, 1, preySliders, "Prey");
+	addSlider(Vector2(RenderWindow::WIDTH - 300.0f, preyStatsPos.y + sliderSpace * 7.0f), "Predator Avoidance", "AvoidPredators", .75, 0, 1, preySliders, "Prey");
+	addSlider(Vector2(RenderWindow::WIDTH - 300.0f, preyStatsPos.y + sliderSpace * 8.0f), "Field of View", "Field of View", 180, 0, 360, preySliders, "Prey");
+	addSlider(Vector2(RenderWindow::WIDTH - 300.0f, preyStatsPos.y + sliderSpace * 9.0f), "Vision Radius", "Vision Radius", 250, 0, 500, preySliders, "Prey");
 	StatBlock* preyBlock = &preyStatsEntity.addComponent<StatBlock>(preySliders, true);
 
 	Entity& predatorStatsEntity = EntityManager::Instance().addEntity(4);
-	Vector2 predatorStatsPos = Vector2(utils::roundFloat(RenderWindow::WIDTH - 450), 90);
-	predatorStatsEntity.addComponent<TextComponent>("Predator", predatorStatsPos, 1, 24, Assets::Instance().font, white, false);
-	predatorStatsEntity.addComponent<SpriteComponent>(predatorStatsPos + Vector2(-30, 12), 1, Assets::Instance().arrowDown);
+	Vector2 predatorStatsPos = Vector2(RenderWindow::WIDTH - 450.0f, 90.0f);
+	predatorStatsEntity.addComponent<TextComponent>("Predator", predatorStatsPos, 1.0f, 24, Assets::Instance().font, white, false);
+	predatorStatsEntity.addComponent<SpriteComponent>(predatorStatsPos + Vector2(-30, 12), 1.0f, Assets::Instance().arrowDown);
 	std::vector<SliderComponent*> predatorSliders;
 	predatorStatsPos.y += 10;
-	addSlider(Vector2(utils::roundFloat(RenderWindow::WIDTH - 300), predatorStatsPos.y + sliderSpace * 1), "Aggression", "Aggression", .7, 0, 1, predatorSliders, "Predator");
-	addSlider(Vector2(utils::roundFloat(RenderWindow::WIDTH - 300), predatorStatsPos.y + sliderSpace * 2), "Speed", "Speed", 2.5f, 0, 5, predatorSliders, "Predator");
-	addSlider(Vector2(utils::roundFloat(RenderWindow::WIDTH - 300), predatorStatsPos.y + sliderSpace * 3), "Acceleration", "Acceleration", 4, 0, 10, predatorSliders, "Predator");
-	addSlider(Vector2(utils::roundFloat(RenderWindow::WIDTH - 300), predatorStatsPos.y + sliderSpace * 4), "Starvation Time", "Starvation Time", 30, 0, 60, predatorSliders, "Predator");
-	addSlider(Vector2(utils::roundFloat(RenderWindow::WIDTH - 300), predatorStatsPos.y + sliderSpace * 5), "Food to Reproduce", "Food to Reproduce", 4, 1, 10, predatorSliders, "Predator");
-	addSlider(Vector2(utils::roundFloat(RenderWindow::WIDTH - 300), predatorStatsPos.y + sliderSpace * 6), "Field of View", "Field of View", 180, 0, 360, predatorSliders, "Predator");
-	addSlider(Vector2(utils::roundFloat(RenderWindow::WIDTH - 300), predatorStatsPos.y + sliderSpace * 7), "Vision Radius", "Vision Radius", 200, 0, 500, predatorSliders, "Predator");
+	addSlider(Vector2(RenderWindow::WIDTH - 300.0f, predatorStatsPos.y + sliderSpace * 1.0f), "Aggression", "Aggression", .7f, 0, 1, predatorSliders, "Predator");
+	addSlider(Vector2(RenderWindow::WIDTH - 300.0f, predatorStatsPos.y + sliderSpace * 2.0f), "Speed", "Speed", 2.5f, 0, 5, predatorSliders, "Predator");
+	addSlider(Vector2(RenderWindow::WIDTH - 300.0f, predatorStatsPos.y + sliderSpace * 3.0f), "Acceleration", "Acceleration", 4, 0, 10, predatorSliders, "Predator");
+	addSlider(Vector2(RenderWindow::WIDTH - 300.0f, predatorStatsPos.y + sliderSpace * 4.0f), "Starvation Time", "Starvation Time", 30, 0, 60, predatorSliders, "Predator");
+	addSlider(Vector2(RenderWindow::WIDTH - 300.0f, predatorStatsPos.y + sliderSpace * 5.0f), "Food to Reproduce", "Food to Reproduce", 4, 1, 10, predatorSliders, "Predator");
+	addSlider(Vector2(RenderWindow::WIDTH - 300.0f, predatorStatsPos.y + sliderSpace * 6.0f), "Field of View", "Field of View", 180, 0, 360, predatorSliders, "Predator");
+	addSlider(Vector2(RenderWindow::WIDTH - 300.0f, predatorStatsPos.y + sliderSpace * 7.0f), "Vision Radius", "Vision Radius", 200, 0, 500, predatorSliders, "Predator");
 	predatorStatsEntity.addComponent<StatBlock>(predatorSliders, false);
 
 
 	Entity& foodStatsEntity = EntityManager::Instance().addEntity(4);
-	Vector2 foodStatsPos = Vector2(utils::roundFloat(RenderWindow::WIDTH - 450), 140);
-	foodStatsEntity.addComponent<TextComponent>("Prey Food", foodStatsPos, 1, 24, Assets::Instance().font, white, false);
-	foodStatsEntity.addComponent<SpriteComponent>(foodStatsPos + Vector2(-30, 12), 1, Assets::Instance().arrowDown);
+	Vector2 foodStatsPos = Vector2(RenderWindow::WIDTH - 450.0f, 140.0f);
+	foodStatsEntity.addComponent<TextComponent>("Prey Food", foodStatsPos, 1.0f, 24, Assets::Instance().font, white, false);
+	foodStatsEntity.addComponent<SpriteComponent>(foodStatsPos + Vector2(-30, 12), 1.0f, Assets::Instance().arrowDown);
 	std::vector<SliderComponent*> foodSliders;
 	foodStatsPos.y += 10;
-	addSlider(Vector2(utils::roundFloat(RenderWindow::WIDTH - 300), foodStatsPos.y + sliderSpace * 1), "Spawn Rate", "Spawn Rate", .3, 0, 1, foodSliders, "Food");
-	addSlider(Vector2(utils::roundFloat(RenderWindow::WIDTH - 300), foodStatsPos.y + sliderSpace * 2), "Food to Reproduce", "Food to Reproduce", 2, 1, 3, foodSliders, "Food");
+	addSlider(Vector2(RenderWindow::WIDTH - 300.0f, foodStatsPos.y + sliderSpace * 1.0f), "Spawn Rate", "Spawn Rate", .3f, 0, 1, foodSliders, "Food");
+	addSlider(Vector2(RenderWindow::WIDTH - 300.0f, foodStatsPos.y + sliderSpace * 2.0f), "Food to Reproduce", "Food to Reproduce", 2, 1, 3, foodSliders, "Food");
 	for (auto slider : foodSliders)
 	{
 		dynamic_cast<FoodSlider*>(slider)->setFoodSpawner(foodSpawner);
@@ -237,17 +237,17 @@ void Game::addSlider(Vector2 pos, std::string name, std::string param, float val
 	int fontSize = 16;
 
 	Entity& sliderKnob = EntityManager::Instance().addEntity(4);
-	SpriteComponent* knobSprite = &sliderKnob.addComponent<SpriteComponent>(Vector2(pos.x - knobRadius, pos.y + knobRadius/2), 1, Assets::Instance().knobSprite);
+	SpriteComponent* knobSprite = &sliderKnob.addComponent<SpriteComponent>(Vector2(pos.x - knobRadius, pos.y + knobRadius/2), 1.0f, Assets::Instance().knobSprite);
 
 	Entity& sliderName = EntityManager::Instance().addEntity(3);
 	SDL_Color color = { 255, 255, 255 };
-	TextComponent* nameText = &sliderName.addComponent<TextComponent>(name, Vector2(pos.x - leftPadding, pos.y), 1, fontSize, Assets::Instance().font, color, true);
+	TextComponent* nameText = &sliderName.addComponent<TextComponent>(name, Vector2(pos.x - leftPadding, pos.y), 1.0f, fontSize, Assets::Instance().font, color, true);
 
 	Entity& sliderAmount = EntityManager::Instance().addEntity(3);
-	TextComponent* amountText = &sliderAmount.addComponent<TextComponent>("1", Vector2(pos.x + sliderWidth + rightPadding, pos.y), 1, fontSize, Assets::Instance().font, color, false);
+	TextComponent* amountText = &sliderAmount.addComponent<TextComponent>("1", Vector2(pos.x + sliderWidth + rightPadding, pos.y), 1.0f, fontSize, Assets::Instance().font, color, false);
 
 	Entity& slider = EntityManager::Instance().addEntity(3);
-	slider.addComponent<SpriteComponent>(Vector2(pos.x, pos.y), 1, Assets::Instance().sliderSprite);
+	slider.addComponent<SpriteComponent>(Vector2(pos.x, pos.y), 1.0f, Assets::Instance().sliderSprite);
 	slider.addChild(&sliderKnob);
 	slider.addChild(&sliderName);
 	slider.addChild(&sliderAmount);

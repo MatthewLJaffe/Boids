@@ -4,6 +4,7 @@ ButtonComponent::ButtonComponent(SDL_Texture* defaultSprite, SDL_Texture* presse
 {
 	this->_pressedSprite = pressedSprite;
 	this->_defaultSprite = defaultSprite;
+	_spriteComponent = nullptr;
 }
 
 ButtonComponent::ButtonComponent(SDL_Texture* defaultSprite, SDL_Texture* pressedSprite, const std::function<void()>& pressedCallback)
@@ -16,8 +17,8 @@ ButtonComponent::ButtonComponent(SDL_Texture* defaultSprite, SDL_Texture* presse
 void ButtonComponent::init()
 {
 	_spriteComponent = &entity->getComponent<SpriteComponent>();
-	_width = utils::roundFloat(_spriteComponent->getSize().x);
-	_height = utils::roundFloat(_spriteComponent->getSize().y);
+	_width = _spriteComponent->getSize().x;
+	_height = _spriteComponent->getSize().y;
 }
 
 void ButtonComponent::update()

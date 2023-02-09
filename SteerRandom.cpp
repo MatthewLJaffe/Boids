@@ -1,8 +1,7 @@
 #include "SteerRandom.hpp"
 
-SteerRandom::SteerRandom(float weight)
+SteerRandom::SteerRandom(float weight) : SteeringBehaviour(weight)
 {
-	this->weight = weight;
 	updateTime = utils::randomFloat(minUpdateTime, maxUpdateTime);
 	_randomDir = Vector2(utils::randomFloat(-1, 1), utils::randomFloat(-1, 1));
 }
