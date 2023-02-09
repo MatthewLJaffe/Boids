@@ -192,7 +192,7 @@ void Game::buildUI(FoodSpawner* foodSpawner)
 	addSlider(Vector2(RenderWindow::WIDTH - 300.0f, preyStatsPos.y + sliderSpace * 5.0f), "Acceleration", "Acceleration", 6, 0, 10, preySliders, "Prey");
 	addSlider(Vector2(RenderWindow::WIDTH - 300.0f, preyStatsPos.y + sliderSpace * 6.0f), "Food Attraction", "Food Attraction", .5, 0, 1, preySliders, "Prey");
 	addSlider(Vector2(RenderWindow::WIDTH - 300.0f, preyStatsPos.y + sliderSpace * 7.0f), "Predator Avoidance", "AvoidPredators", .75, 0, 1, preySliders, "Prey");
-	addSlider(Vector2(RenderWindow::WIDTH - 300.0f, preyStatsPos.y + sliderSpace * 8.0f), "Field of View", "Field of View", 180, 0, 360, preySliders, "Prey");
+	addSlider(Vector2(RenderWindow::WIDTH - 300.0f, preyStatsPos.y + sliderSpace * 8.0f), "Field of View", "Field of View", 360, 0, 360, preySliders, "Prey");
 	addSlider(Vector2(RenderWindow::WIDTH - 300.0f, preyStatsPos.y + sliderSpace * 9.0f), "Vision Radius", "Vision Radius", 250, 0, 500, preySliders, "Prey");
 	StatBlock* preyBlock = &preyStatsEntity.addComponent<StatBlock>(preySliders, true);
 
@@ -203,7 +203,7 @@ void Game::buildUI(FoodSpawner* foodSpawner)
 	std::vector<SliderComponent*> predatorSliders;
 	predatorStatsPos.y += 10;
 	addSlider(Vector2(RenderWindow::WIDTH - 300.0f, predatorStatsPos.y + sliderSpace * 1.0f), "Aggression", "Aggression", .7f, 0, 1, predatorSliders, "Predator");
-	addSlider(Vector2(RenderWindow::WIDTH - 300.0f, predatorStatsPos.y + sliderSpace * 2.0f), "Speed", "Speed", 2.5f, 0, 5, predatorSliders, "Predator");
+	addSlider(Vector2(RenderWindow::WIDTH - 300.0f, predatorStatsPos.y + sliderSpace * 2.0f), "Speed", "Speed", 2.6f, 0, 5, predatorSliders, "Predator");
 	addSlider(Vector2(RenderWindow::WIDTH - 300.0f, predatorStatsPos.y + sliderSpace * 3.0f), "Acceleration", "Acceleration", 4, 0, 10, predatorSliders, "Predator");
 	addSlider(Vector2(RenderWindow::WIDTH - 300.0f, predatorStatsPos.y + sliderSpace * 4.0f), "Starvation Time", "Starvation Time", 30, 0, 60, predatorSliders, "Predator");
 	addSlider(Vector2(RenderWindow::WIDTH - 300.0f, predatorStatsPos.y + sliderSpace * 5.0f), "Food to Reproduce", "Food to Reproduce", 4, 1, 10, predatorSliders, "Predator");

@@ -1,12 +1,31 @@
-﻿  Game.cpp
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\ECS.hpp(71,33): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
-          with
-          [
-              _Ty=int
-          ]
-C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\Game.cpp(244,160): message : see reference to function template instantiation 'T &Entity::addComponent<TextComponent,std::string&,Vector2,int,int&,TTF_Font*&,SDL_Color&,bool>(std::string &,Vector2 &&,int &&,int &,TTF_Font *&,SDL_Color &,bool &&)' being compiled
-          with
-          [
-              T=TextComponent
-          ]
+﻿  Alignment.cpp
+  BoidComponent.cpp
+  BoundaryComponent.cpp
+  ButtonComponent.cpp
+  Chase.cpp
+  Cohesion.cpp
+  ECS.cpp
+  EntityManager.cpp
+  FoodComponent.cpp
+  FoodSlider.cpp
+  FoodSpawner.cpp
+  Game.cpp
+  Main.cpp
+  PredatorBoid.cpp
+  PredatorSlider.cpp
+C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\PredatorSlider.cpp(54,33): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  PreyBoidComponent.cpp
+  PreyBoidSlider.cpp
+  Seperation.cpp
+  SliderComponent.cpp
+  SpriteComponent.cpp
+  Generating Code...
+  Compiling...
+  StatBlock.cpp
+  SteerRandom.cpp
+  SteeringBehaviour.cpp
+  TextComponent.cpp
+  TransformComponent.cpp
+  WorldSpriteComponent.cpp
+  Generating Code...
   Boids.vcxproj -> C:\Users\Matthew\OneDrive - Virginia Tech\Documents\GradSchool\Projects\Boids\x64\Debug\Boids.exe
