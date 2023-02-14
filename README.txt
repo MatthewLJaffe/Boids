@@ -1,3 +1,9 @@
+This project is a boid ecosystem created by Matthew Jaffe
+This code was written Febuary 2nd-6th 2023 
+
+All relevant code files are included in the same directory in this directory. Dependencies are included
+in the src directory, and assets such as the ttf font and pngs 
+
 All dependcies are locally included in this directory and set up to correctly link in the project. 
 To compile and run the program you must select x64 as the target platform in visual studio.
 
@@ -23,11 +29,11 @@ For Predators
 Aggression: How focused predator boids are on eating prey
 Speed: How fast the boids move
 Acceleration: How fast the boids turn
-Starvation time: The time in seconds a preditor takes to die without eating
+Starvation time: The time in seconds a predator takes to die without eating
 Food to reproduce: the amount of prey boids a predator must eat to reproduce
 Field of view: controls the maximum angle around a boid that it can see
 Vision radius: determines how far away a boid can see
 
 For Prey Food
 Spawn rate: how fast food spawns
-Food to reproduce: how much food a prey boid must eat to reproduce
+Food to reproduce: how much food a prey boid must eat to reproduced
