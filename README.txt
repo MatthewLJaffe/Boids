@@ -2,10 +2,11 @@ This project is a boid ecosystem created by Matthew Jaffe
 This code was written Febuary 2nd-6th 2023 
 
 All relevant code files are included in the same directory in this directory. Dependencies are included
-in the src directory, and assets such as the ttf font and pngs 
-
+in the src directory, and required assets such as the ttf font and pngs are included in the assets directory
 All dependcies are locally included in this directory and set up to correctly link in the project. 
-To compile and run the program you must select x64 as the target platform in visual studio.
+
+To compile and run the program open the solution in Visual Studio, select x64 as the target platform,
+and then the program can be run in visual studio
 
 This boid ecosystem contains 3 different types of prey boids as well as predator boids. Prey boids will 
 try to flock together with boids of the same color, and collect food while avoiding prey as well as the black circles.
